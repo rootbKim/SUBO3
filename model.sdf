@@ -1,0 +1,1277 @@
+<?xml version="1.0"?>
+<sdf version='1.6'>
+  <model name='SUBO3'>
+    <joint name='world_joint' type='fixed'>
+      <child>PELVIS_LINK</child>
+      <parent>world</parent>
+      <axis>
+        <xyz>0 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>      
+    </joint>  
+    <link name='UPPER_BODY_LINK'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.001216 0.000363 0.063269 0 -0 0</pose>
+        <mass>6.00336</mass>
+        <inertia>
+          <ixx>0.0614305</ixx>
+          <ixy>-2.25483e-05</ixy>
+          <ixz>0.000723458</ixz>
+          <iyy>0.035232</iyy>
+          <iyz>-0.000583323</iyz>
+          <izz>0.0508033</izz>
+        </inertia>
+      </inertial>
+      <collision name='UPPER_BODY_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/UPPER_BODY_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='UPPER_BODY_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/UPPER_BODY_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>0 0 0 1</ambient>
+	  <diffuse>0.3 0.3 0.3 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <link name='PELVIS_LINK'>
+      <pose frame=''>0.021036 0 -0.04 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.015397 -4e-06 -0.023829 0 -0 0</pose>
+        <mass>2.4074</mass>
+        <inertia>
+          <ixx>0.01017</ixx>
+          <ixy>-1.4807e-06</ixy>
+          <ixz>9.2051e-05</ixz>
+          <iyy>0.0037161</iyy>
+          <iyz>3.9097e-07</iyz>
+          <izz>0.010827</izz>
+        </inertia>
+      </inertial>
+      <collision name='PELVIS_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/PELVIS_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='PELVIS_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/PELVIS_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>0 0 0 1</ambient>
+	  <diffuse>0.3 0.3 0.3 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <joint name='PELVIS_JOINT' type='fixed'>
+      <child>PELVIS_LINK</child>
+      <parent>UPPER_BODY_LINK</parent>
+      <axis>
+        <xyz>0 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='BODY_IMU_LINK'>
+      <pose frame=''>0.022536 0 -0.094 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.000402 4.6e-05 0.009476 0 -0 0</pose>
+        <mass>0.0368511</mass>
+        <inertia>
+          <ixx>9.41068e-06</ixx>
+          <ixy>3.11243e-08</ixy>
+          <ixz>9.51932e-08</ixz>
+          <iyy>9.15702e-06</iyy>
+          <iyz>1.07897e-08</iyz>
+          <izz>1.6191e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='BODY_IMU_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/BODY_IMU_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='BODY_IMU_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/BODY_IMU_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>0 213 0 1</ambient>
+	  <diffuse>0.8 0.8 0.8 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+      <sensor name='BODY_IMU' type='imu'>
+	<pose frame=''>0.000402 4.6e-05 0.009476 0 -0 0</pose>
+	<imu>
+	  <angular_velocity>
+	    <x>
+	      <noise type='none'></noise>
+	    </x>
+	    <y>
+	      <noise type='none'></noise>
+	    </y>
+	    <z>
+	      <noise type='none'></noise>
+	    </z>
+	  </angular_velocity>
+	  <linear_acceleration>
+	    <x>
+	      <noise type='none'></noise>
+	    </x>
+	    <y>
+	      <noise type='none'></noise>
+	    </y>
+	    <z>
+	      <noise type='none'></noise>
+	    </z>
+	  </linear_acceleration>
+	</imu>
+	<always_on>1</always_on>
+	<update_rate>1000</update_rate>
+      </sensor>
+    </link>
+    <joint name='BODY_IMU_JOINT' type='fixed'>
+      <child>BODY_IMU_LINK</child>
+      <parent>PELVIS_LINK</parent>
+      <axis>
+        <xyz>0 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='L_PELVIS_YAW_LINK'>
+      <pose frame=''>0.021036 -0.07 -0.115 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.026599 0.006217 -0.028067 0 -0 0</pose>
+        <mass>0.529177</mass>
+        <inertia>
+          <ixx>0.000418436</ixx>
+          <ixy>-5.7152e-06</ixy>
+          <ixz>-0.000133777</ixz>
+          <iyy>0.000997903</iyy>
+          <iyz>-1.78719e-05</iyz>
+          <izz>0.00081758</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_PELVIS_YAW_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_PELVIS_YAW_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_PELVIS_YAW_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_PELVIS_YAW_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>0 0 0 1</ambient>
+	  <diffuse>0.3 0.3 0.3 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <joint name='L_PELVIS_YAW_JOINT' type='revolute'>
+      <child>L_PELVIS_YAW_LINK</child>
+      <parent>PELVIS_LINK</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='L_PELVIS_ROLL_LINK'>
+      <pose frame=''>-0.041214 -0.07 -0.189 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.04366 -0.01333 -2.5e-05 0 -0 0</pose>
+        <mass>0.912485</mass>
+        <inertia>
+          <ixx>0.000746583</ixx>
+          <ixy>0.000218626</ixy>
+          <ixz>-1.83821e-06</ixz>
+          <iyy>0.00106601</iyy>
+          <iyz>-1.11196e-06</iyz>
+          <izz>0.00141403</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_PELVIS_ROLL_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_PELVIS_ROLL_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_PELVIS_ROLL_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_PELVIS_ROLL_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>213 0 0 1</ambient>
+	  <diffuse>0.8 0.8 0.8 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <joint name='L_PELVIS_ROLL_JOINT' type='revolute'>
+      <child>L_PELVIS_ROLL_LINK</child>
+      <parent>L_PELVIS_YAW_LINK</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='L_PELVIS_PITCH_LINK'>
+      <pose frame=''>0.020786 -0.119 -0.189 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.00474 0.034859 -0.132488 0 -0 0</pose>
+        <mass>1.38539</mass>
+        <inertia>
+          <ixx>0.0103114</ixx>
+          <ixy>1.65887e-05</ixy>
+          <ixz>0.000216521</ixz>
+          <iyy>0.00897752</iyy>
+          <iyz>0.000197642</iyz>
+          <izz>0.00237052</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_PELVIS_PITCH_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_PELVIS_PITCH_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_PELVIS_PITCH_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_PELVIS_PITCH_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>0 0 0 1</ambient>
+	  <diffuse>0.3 0.3 0.3 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <joint name='L_PELVIS_PITCH_JOINT' type='revolute'>
+      <child>L_PELVIS_PITCH_LINK</child>
+      <parent>L_PELVIS_ROLL_LINK</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='L_KNEE_PITCH_LINK'>
+      <pose frame=''>0.020786 -0.119 -0.439 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.000119 0.029903 -0.070104 0 -0 0</pose>
+        <mass>1.46958</mass>
+        <inertia>
+          <ixx>0.0118306</ixx>
+          <ixy>-1.4719e-05</ixy>
+          <ixz>-3.07657e-05</ixz>
+          <iyy>0.0107462</iyy>
+          <iyz>0.000643983</iyz>
+          <izz>0.00204956</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_KNEE_PITCH_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_KNEE_PITCH_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_KNEE_PITCH_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_KNEE_PITCH_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>0 0 0 1</ambient>
+	  <diffuse>0.3 0.3 0.3 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <joint name='L_KNEE_PITCH_JOINT' type='revolute'>
+      <child>L_KNEE_PITCH_LINK</child>
+      <parent>L_PELVIS_PITCH_LINK</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='L_ANKLE_PITCH_LINK'>
+      <pose frame=''>0.020786 -0.119 -0.689 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.013273 0.041921 0.010132 0 -0 0</pose>
+        <mass>1.2381</mass>
+        <inertia>
+          <ixx>0.00142361</ixx>
+          <ixy>0.000142717</ixy>
+          <ixz>-3.68757e-05</ixz>
+          <iyy>0.00168717</iyy>
+          <iyz>-0.000265596</iyz>
+          <izz>0.00182484</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_ANKLE_PITCH_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_ANKLE_PITCH_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_ANKLE_PITCH_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_ANKLE_PITCH_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>213 0 0 1</ambient>
+	  <diffuse>0.8 0.8 0.8 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <joint name='L_ANKLE_PITCH_JOINT' type='revolute'>
+      <child>L_ANKLE_PITCH_LINK</child>
+      <parent>L_KNEE_PITCH_LINK</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='L_ANKLE_ROLL_LINK'>
+      <pose frame=''>-0.040214 -0.07 -0.689 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.051907 0 -0.02645 0 -0 0</pose>
+        <mass>0.274126</mass>
+        <inertia>
+          <ixx>0.000225695</ixx>
+          <ixy>2.15312e-17</ixy>
+          <ixz>6.97269e-05</ixz>
+          <iyy>0.000785348</iyy>
+          <iyz>-2.15152e-17</iyz>
+          <izz>0.000665543</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_ANKLE_ROLL_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_ANKLE_ROLL_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_ANKLE_ROLL_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_ANKLE_ROLL_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>0 0 0 1</ambient>
+	  <diffuse>0.3 0.3 0.3 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <joint name='L_ANKLE_ROLL_JOINT' type='revolute'>
+      <child>L_ANKLE_ROLL_LINK</child>
+      <parent>L_ANKLE_PITCH_LINK</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='L_TORQUE_SENSOR_LINK'>
+      <pose frame=''>0.021786 -0.07 -0.756 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.000211 -0.000366 -0.007377 0 -0 0</pose>
+        <mass>0.153697</mass>
+        <inertia>
+          <ixx>8.39954e-05</ixx>
+          <ixy>1.0297e-06</ixy>
+          <ixz>3.7135e-08</ixz>
+          <iyy>8.51833e-05</iyy>
+          <iyz>6.35895e-08</iyz>
+          <izz>0.000146738</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_TORQUE_SENSOR_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_TORQUE_SENSOR_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_TORQUE_SENSOR_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_TORQUE_SENSOR_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>0 0 213 1</ambient>
+	  <diffuse>0.8 0.8 0.8 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <joint name='L_TORQUE_SENSOR_JOINT' type='fixed'>
+      <child>L_TORQUE_SENSOR_LINK</child>
+      <parent>L_ANKLE_ROLL_LINK</parent>
+      <axis>
+        <xyz>0 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='L_FOOTPAD_LINK'>
+      <pose frame=''>0.021786 -0.07 -0.78 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.023849 -0.010182 -0.00333 0 -0 0</pose>
+        <mass>0.396272</mass>
+        <inertia>
+          <ixx>0.00051305</ixx>
+          <ixy>-6.00567e-07</ixy>
+          <ixz>-2.38296e-06</ixz>
+          <iyy>0.00117887</iyy>
+          <iyz>2.76278e-07</iyz>
+          <izz>0.00168027</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_FOOTPAD_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_FOOTPAD_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<surface>
+	  <bounce>
+	    <restitution_coefficient>0</restitution_coefficient>
+	  </bounce>
+	  <friction>
+	    <ode>
+	      <mu> 1 </mu>
+	      <mu2> 1 </mu2>
+	    </ode>
+	  </friction>
+	  <contact>
+	    <ode>
+	    <kp>5000000</kp>
+	    <kd>5000</kd> -->
+	     <max_vel>0.1</max_vel>
+	     <min_depth>0.0001</min_depth>
+	    </ode>
+	  </contact>
+	</surface>
+      </collision>
+      <visual name='L_FOOTPAD_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_FOOTPAD_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>0 0 0 1</ambient>
+	  <diffuse>0.3 0.3 0.3 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <joint name='L_FOOTPAD_JOINT' type='fixed'>
+      <child>L_FOOTPAD_LINK</child>
+      <parent>L_TORQUE_SENSOR_LINK</parent>
+      <sensor name="R_TF_SENSOR" type="force_torque">
+	<force_torque>
+	  <frame>parent</frame>
+	  <measure_direction>child_to_parent</measure_direction>
+	</force_torque>
+	<always_on>1</always_on>
+	<update_rate>1000</update_rate>
+      </sensor>
+    </joint>
+    <link name='L_LEG_IMU_LINK'>
+      <pose frame=''>0.100286 -0.07 -0.777 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.000402 4.6e-05 0.009476 0 -0 0</pose>
+        <mass>0.0368511</mass>
+        <inertia>
+          <ixx>9.41068e-06</ixx>
+          <ixy>-3.11243e-08</ixy>
+          <ixz>-9.51932e-08</ixz>
+          <iyy>9.15702e-06</iyy>
+          <iyz>1.07897e-08</iyz>
+          <izz>1.6191e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_LEG_IMU_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_LEG_IMU_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_LEG_IMU_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/L_LEG_IMU_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>0 213 0 1</ambient>
+	  <diffuse>0.8 0.8 0.8 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+      <sensor name='L_IMU' type='imu'>
+	<pose frame=''>-0.000402 4.6e-05 0.009476 0 -0 0</pose>
+	<imu>
+	  <angular_velocity>
+	    <x>
+	      <noise type='none'></noise>
+	    </x>
+	    <y>
+	      <noise type='none'></noise>
+	    </y>
+	    <z>
+	      <noise type='none'></noise>
+	    </z>
+	  </angular_velocity>
+	  <linear_acceleration>
+	    <x>
+	      <noise type='none'></noise>
+	    </x>
+	    <y>
+	      <noise type='none'></noise>
+	    </y>
+	    <z>
+	      <noise type='none'></noise>
+	    </z>
+	  </linear_acceleration>
+	</imu>
+	<always_on>1</always_on>
+	<update_rate>1000</update_rate>
+      </sensor>
+    </link>
+    <joint name='L_LEG_IMU_JOINT' type='fixed'>
+      <child>L_LEG_IMU_LINK</child>
+      <parent>L_FOOTPAD_LINK</parent>
+      <axis>
+        <xyz>0 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='R_PELVIS_YAW_LINK'>
+      <pose frame=''>0.021036 0.07 -0.115 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.026616 -0.006227 -0.028069 0 -0 0</pose>
+        <mass>0.530103</mass>
+        <inertia>
+          <ixx>0.000418702</ixx>
+          <ixy>5.24777e-06</ixy>
+          <ixz>-0.000133157</ixz>
+          <iyy>0.00100065</iyy>
+          <iyz>1.7974e-05</iyz>
+          <izz>0.000820266</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_PELVIS_YAW_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_PELVIS_YAW_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_PELVIS_YAW_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_PELVIS_YAW_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>0 0 0 1</ambient>
+	  <diffuse>0.3 0.3 0.3 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <joint name='R_PELVIS_YAW_JOINT' type='revolute'>
+      <child>R_PELVIS_YAW_LINK</child>
+      <parent>PELVIS_LINK</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='R_PELVIS_ROLL_LINK'>
+      <pose frame=''>-0.041214 0.07 -0.189 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.044125 0.01295 -2.5e-05 0 -0 0</pose>
+        <mass>0.92744</mass>
+        <inertia>
+          <ixx>0.00075826</ixx>
+          <ixy>-0.00021022</ixy>
+          <ixz>-1.847e-06</ixz>
+          <iyy>0.0010831</iyy>
+          <iyz>1.1233e-06</iyz>
+          <izz>0.0014423</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_PELVIS_ROLL_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_PELVIS_ROLL_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_PELVIS_ROLL_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_PELVIS_ROLL_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>213 0 0 1</ambient>
+	  <diffuse>0.8 0.8 0.8 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <joint name='R_PELVIS_ROLL_JOINT' type='revolute'>
+      <child>R_PELVIS_ROLL_LINK</child>
+      <parent>R_PELVIS_YAW_LINK</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='R_PELVIS_PITCH_LINK'>
+      <pose frame=''>0.020786 0.119 -0.189 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.004738 -0.034838 -0.132461 0 -0 0</pose>
+        <mass>1.38599</mass>
+        <inertia>
+          <ixx>0.0103151</ixx>
+          <ixy>-1.64551e-05</ixy>
+          <ixz>0.0002167</ixz>
+          <iyy>0.00897984</iyy>
+          <iyz>-0.000199389</iyz>
+          <izz>0.00237186</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_PELVIS_PITCH_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_PELVIS_PITCH_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_PELVIS_PITCH_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_PELVIS_PITCH_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>0 0 0 1</ambient>
+	  <diffuse>0.3 0.3 0.3 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <joint name='R_PELVIS_PITCH_JOINT' type='revolute'>
+      <child>R_PELVIS_PITCH_LINK</child>
+      <parent>R_PELVIS_ROLL_LINK</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='R_KNEE_PITCH_LINK'>
+      <pose frame=''>0.020786 0.119 -0.439 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.000111 -0.029891 -0.070094 0 -0 0</pose>
+        <mass>1.4709</mass>
+        <inertia>
+          <ixx>0.011839</ixx>
+          <ixy>1.5237e-05</ixy>
+          <ixz>-3.1809e-05</ixz>
+          <iyy>0.010754</iyy>
+          <iyz>-0.00064188</iyz>
+          <izz>0.0020508</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_KNEE_PITCH_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_KNEE_PITCH_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_KNEE_PITCH_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_KNEE_PITCH_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>0 0 0 1</ambient>
+	  <diffuse>0.3 0.3 0.3 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <joint name='R_KNEE_PITCH_JOINT' type='revolute'>
+      <child>R_KNEE_PITCH_LINK</child>
+      <parent>R_PELVIS_PITCH_LINK</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='R_ANKLE_PITCH_LINK'>
+      <pose frame=''>0.020786 0.119 -0.689 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.013217 -0.041931 0.010133 0 -0 0</pose>
+        <mass>1.2402</mass>
+        <inertia>
+          <ixx>0.0014248</ixx>
+          <ixy>-0.00014179</ixy>
+          <ixz>-3.7258e-05</ixz>
+          <iyy>0.0016907</iyy>
+          <iyz>0.00026597</iyz>
+          <izz>0.0018283</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_ANKLE_PITCH_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_ANKLE_PITCH_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_ANKLE_PITCH_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_ANKLE_PITCH_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>213 0 0 1</ambient>
+	  <diffuse>0.8 0.8 0.8 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <joint name='R_ANKLE_PITCH_JOINT' type='revolute'>
+      <child>R_ANKLE_PITCH_LINK</child>
+      <parent>R_KNEE_PITCH_LINK</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='R_ANKLE_ROLL_LINK'>
+      <pose frame=''>-0.040214 0.07 -0.689 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.051907 0 -0.02645 0 -0 0</pose>
+        <mass>0.274126</mass>
+        <inertia>
+          <ixx>0.000225695</ixx>
+          <ixy>-2.89044e-17</ixy>
+          <ixz>6.97269e-05</ixz>
+          <iyy>0.000785348</iyy>
+          <iyz>3.59132e-17</iyz>
+          <izz>0.000665543</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_ANKLE_ROLL_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_ANKLE_ROLL_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_ANKLE_ROLL_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_ANKLE_ROLL_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>0 0 0 1</ambient>
+	  <diffuse>0.3 0.3 0.3 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <joint name='R_ANKLE_ROLL_JOINT' type='revolute'>
+      <child>R_ANKLE_ROLL_LINK</child>
+      <parent>R_ANKLE_PITCH_LINK</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='R_TORQUE_SENSOR_LINK'>
+      <pose frame=''>0.021786 0.07 -0.756 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.000211 -0.000365 -0.007377 0 -0 0</pose>
+        <mass>0.153696</mass>
+        <inertia>
+          <ixx>8.39931e-05</ixx>
+          <ixy>1.03003e-06</ixy>
+          <ixz>3.6444e-08</ixz>
+          <iyy>8.51827e-05</iyy>
+          <iyz>6.30862e-08</iyz>
+          <izz>0.000146736</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_TORQUE_SENSOR_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_TORQUE_SENSOR_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_TORQUE_SENSOR_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_TORQUE_SENSOR_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>0 0 213 1</ambient>
+	  <diffuse>0.8 0.8 0.8 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <joint name='R_TORQUE_SENSOR_JOINT' type='fixed'>
+      <child>R_TORQUE_SENSOR_LINK</child>
+      <parent>R_ANKLE_ROLL_LINK</parent>
+      <axis>
+        <xyz>0 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='R_FOOTPAD_LINK'>
+      <pose frame=''>0.021786 0.07 -0.78 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.023847 0.010186 -0.003279 0 -0 0</pose>
+        <mass>0.389644</mass>
+        <inertia>
+          <ixx>0.000498675</ixx>
+          <ixy>6.00382e-07</ixy>
+          <ixz>-2.38601e-06</ixz>
+          <iyy>0.00113946</iyy>
+          <iyz>-2.72583e-07</iyz>
+          <izz>0.00162669</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_FOOTPAD_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_FOOTPAD_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<surface>
+	  <bounce>
+	    <restitution_coefficient>0</restitution_coefficient>
+	  </bounce>
+	  <friction>
+	    <ode>
+	      <mu> 1 </mu>
+	      <mu2> 1 </mu2>
+	    </ode>
+	  </friction>
+	  <contact>
+	    <ode>
+	    <kp>5000000</kp>
+	    <kd>5000</kd> -->
+	     <max_vel>0.1</max_vel>
+	     <min_depth>0.0001</min_depth>
+	    </ode>
+	  </contact>
+	</surface>
+      </collision>
+      <visual name='R_FOOTPAD_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_FOOTPAD_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>0 0 0 1</ambient>
+	  <diffuse>0.3 0.3 0.3 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+    </link>
+    <joint name='R_FOOTPAD_JOINT' type='fixed'>
+      <child>R_FOOTPAD_LINK</child>
+      <parent>R_TORQUE_SENSOR_LINK</parent>
+      <sensor name="R_TF_SENSOR" type="force_torque">
+	<force_torque>
+	  <frame>parent</frame>
+	  <measure_direction>child_to_parent</measure_direction>
+	</force_torque>
+	<always_on>1</always_on>
+	<update_rate>1000</update_rate>
+      </sensor>
+    </joint>
+    <link name='R_LEG_IMU_LINK'>
+      <pose frame=''>0.100286 0.07 -0.777 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.000402 4.6e-05 0.009476 0 -0 0</pose>
+        <mass>0.0368511</mass>
+        <inertia>
+          <ixx>9.41068e-06</ixx>
+          <ixy>3.11243e-08</ixy>
+          <ixz>9.51932e-08</ixz>
+          <iyy>9.15702e-06</iyy>
+          <iyz>1.07897e-08</iyz>
+          <izz>1.6191e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_LEG_IMU_LINK_collision'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_LEG_IMU_LINK.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_LEG_IMU_LINK_visual'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://SUBO3/meshes/R_LEG_IMU_LINK.STL</uri>
+          </mesh>
+        </geometry>
+	<material>
+	  <ambient>0 213 0 1</ambient>
+	  <diffuse>0.8 0.8 0.8 1</diffuse>
+	  <emissive>0 0 0 1</emissive>
+	  <specular>0 0 0 0</specular>
+	</material>
+      </visual>
+      <sensor name='R_IMU' type='imu'>
+	<pose frame=''>0.000402 4.6e-05 0.009476 0 -0 0</pose>
+	<imu>
+	  <angular_velocity>
+	    <x>
+	      <noise type='none'></noise>
+	    </x>
+	    <y>
+	      <noise type='none'></noise>
+	    </y>
+	    <z>
+	      <noise type='none'></noise>
+	    </z>
+	  </angular_velocity>
+	  <linear_acceleration>
+	    <x>
+	      <noise type='none'></noise>
+	    </x>
+	    <y>
+	      <noise type='none'></noise>
+	    </y>
+	    <z>
+	      <noise type='none'></noise>
+	    </z>
+	  </linear_acceleration>
+	</imu>
+	<always_on>1</always_on>
+	<update_rate>1000</update_rate>
+      </sensor>
+    </link>
+    <joint name='R_LEG_IMU_JOINT' type='fixed'>
+      <child>R_LEG_IMU_LINK</child>
+      <parent>R_FOOTPAD_LINK</parent>
+      <axis>
+        <xyz>0 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+  </model>
+</sdf>

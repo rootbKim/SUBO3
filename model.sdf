@@ -20,7 +20,7 @@
       </axis>      
     </joint>
   on the air -->
-
+    <self_collide>1</self_collide>
     <link name='UPPER_BODY_LINK'>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
